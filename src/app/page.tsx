@@ -9,6 +9,7 @@ import { SummaryCards } from "@/components/summary-cards";
 import { DailyTimeline } from "@/components/daily-timeline";
 import { RecentCheckins } from "@/components/recent-checkins";
 import { MoodEnergyChart } from "@/components/mood-energy-chart";
+import { CheckinForm } from "@/components/checkin-form";
 
 export default async function DashboardPage() {
   const [todayCheckins, recentCheckins, moodEntries, todayMeals, todayPresence] =
@@ -34,6 +35,8 @@ export default async function DashboardPage() {
       </header>
 
       <main className="mx-auto max-w-5xl space-y-8 px-4 py-8 sm:px-6">
+        <CheckinForm />
+
         <SummaryCards
           checkinCount={todayCheckins.length}
           mealsLogged={todayMeals.length}
